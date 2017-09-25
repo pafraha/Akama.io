@@ -13,7 +13,6 @@ $modules = [
 
 $builder = new ContainerBuilder();
 $builder->addDefinitions(dirname(__DIR__) . '/config/config.php');
-$builder->addDefinitions(dirname(__DIR__) . '/config.php');
 
 foreach ($modules as $module) {
     if ($module::DEFINITIONS) {
@@ -21,9 +20,12 @@ foreach ($modules as $module) {
     }
 }
 
+$builder->addDefinitions(dirname(__DIR__) . '/config.php');
 $container = $builder->build();
 
 $app = new App($container, $modules);
 
-$response = $app->run(ServerRequest::fromGlobals());
-send($response);
+if (php_sapi_name() !== "cli") {
+    $response = $app->run(ServerRequest::fromGlobals());
+    send($response);
+}

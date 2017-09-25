@@ -69,4 +69,12 @@ class App
             throw new \Exception('Response Error');
         }
     }
+
+    /**
+     * @return ContainerInterface
+     */
+    public function getContainer(): ContainerInterface
+    {
+        return $this->container;
+    }
 }

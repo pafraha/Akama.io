@@ -8,11 +8,15 @@ use Framework\Renderer\TwigRendererFactory;
 use Framework\Router;
 
 return [
+    'database.host' => 'localhost',
+    'database.username' => 'root',
+    'database.password' => '',
+    'database.name' => 'monsupersite',
     'views.path' => dirname(__DIR__) . '/views',
-    Router::class => object(),
     'twig.extensions' => [
         get(Router\RouterTwigExtension::class)
     ],
+    Router::class => object(),
     // RendererInterface::class => object(TwigRenderer::class)->constructor(get('config.view_path'))
     RendererInterface::class => factory(TwigRendererFactory::class)
 ];
