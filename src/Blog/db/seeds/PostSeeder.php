@@ -20,7 +20,7 @@ class PostSeeder extends AbstractSeed
 
         $faker = Factory::create('fr_FR');
 
-        for ($i = 0; $i <= 100; $i++) {
+        for ($i = 0; $i < 100; $i++) {
             $date = $faker->unixTime('now');
             $data[] = [
                 'name' => $faker->catchPhrase,

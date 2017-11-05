@@ -7,15 +7,13 @@
     <title>{% block title "Mon Framework" %}</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="http://localhost:8080/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
-    <link href="http://localhost:8080/css/navbar-fixed-top.css" rel="stylesheet">
 </head>
 
 <body>
 <!-- Fixed navbar -->
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
@@ -40,13 +38,10 @@
 </nav>
 
 <div class="container">
-    <div class="jumbotron">
-        {% block body %} {% endblock %}
-    </div>
+    {% block body %} {% endblock %}
 </div> <!-- /container -->
 
-<script src="http://localhost:8080/js/jquery.min.js"></script>
-<script src="http://localhost:8080/js/bootstrap.min.js"></script>
+<script src="/js/jquery.min.js"></script>
 
 {#
 <script src="js/jquery.min.js"></script>

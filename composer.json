@@ -20,7 +20,8 @@
         "twig/twig": "^2.0",
         "twbs/bootstrap": "^3.3",
         "php-di/php-di": "^5.4",
-        "pagerfanta/pagerfanta": "^1.0.5"
+        "pagerfanta/pagerfanta": "^1.0.5",
+        "http-interop/http-middleware": "^0.4.1"
     },
     "require-dev": {
         "phpunit/phpunit": "6.2",
