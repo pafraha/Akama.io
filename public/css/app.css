@@ -1,0 +1,48 @@
+
+body {
+    padding-top: 65px;
+}
+.pagination {
+    padding-top: 25px;
+}
+.card {
+    border-color: blue;
+}
+
+.animbrand a::after, .animbrand a::before {
+    display: inline-block;
+    opacity: 0;
+    -webkit-transition: -webkit-transform .3s, opacity .2s;
+    -moz-transition: -moz-transform .3s, opacity .2s;
+    transition: transform .3s, opacity .2s;
+    color: white;
+    font-size: 22px;
+    line-height: 16px
+}
+
+.animbrand a::before {
+    margin-right: 3px;
+    content: '<<';
+    -webkit-transform: translateX(50px);
+    -moz-transform: translateX(50px);
+    transform: translateX(50px)
+}
+
+.animbrand a::after {
+    margin-left: 3px;
+    content: '>>';
+    -webkit-transform: translateX(-50px);
+    -moz-transform: translateX(-50px);
+    transform: translateX(-50px)
+}
+
+.animbrand a:focus::after, .animbrand a:focus::before, .animbrand a:hover::after, .animbrand a:hover::before {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    transform: translateX(0)
+}
+
+div.animbrand a:focus, div.animbrand a:hover {
+    outline: 0
+}
