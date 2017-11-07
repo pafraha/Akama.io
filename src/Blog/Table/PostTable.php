@@ -4,15 +4,16 @@ namespace App\Blog\Table;
 use App\Blog\Entity\Post;
 use Framework\Database\PaginatedQuery;
 use Pagerfanta\Pagerfanta;
+use PDO;
 
 class PostTable
 {
     /**
-     * @var \PDO
+     * @var PDO
      */
     private $pdo;
 
-    public function __construct(\PDO $pdo)
+    public function __construct(PDO $pdo)
     {
         $this->pdo = $pdo;
     }
@@ -31,12 +32,12 @@ class PostTable
             ->setCurrentPage($cPage);
     }
 
-    public function find(int  $id): Post
+    public function find(int  $id): ?Post
     {
         $query = $this->pdo->prepare('SELECT * FROM posts WHERE id = ?');
         $query->execute([$id]);
-        $query->setFetchMode(\PDO::FETCH_CLASS, Post::class);
+        $query->setFetchMode(PDO::FETCH_CLASS, Post::class);
 
-        return $query->fetch();
+        return $query->fetch() ?: null;
     }
 }
